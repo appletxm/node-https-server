@@ -11,12 +11,12 @@ let certificate = fs.readFileSync(path.join(__dirname, '../certificate/csr.crt')
 let cert = {
   key: privateKey,
   cert: certificate
-  // This is necessary only if using the client certificate authentication.  
-  // requestCert: true,
-  // rejectUnauthorized: true
-  // passphrase:'test',  
-  // This is necessary only if the client uses the self-signed certificate.  
-  // ca: [ fs.readFileSync('../key/ca-cert.pem') ]  
+// This is necessary only if using the client certificate authentication.  
+// requestCert: true,
+// rejectUnauthorized: true
+// passphrase:'test',  
+// This is necessary only if the client uses the self-signed certificate.  
+// ca: [ fs.readFileSync('../key/ca-cert.pem') ]  
 }
 let httpServer = http.createServer(app)
 let httpsServer = https.createServer(cert, app)
